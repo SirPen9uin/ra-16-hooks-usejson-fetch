@@ -2,8 +2,10 @@ import PropTypes from "prop-types";
 import useJsonFetch from "./hooks/useJsonFetch";
 import "./App.css";
 
+const BASE_URL = 'https://ra-16-hooks-usejson-backend.onrender.com'
+
 function JsonFetchHook(props) {
-  const [data, loading, error] = useJsonFetch(import.meta.env.VITE_BACKEND_URL + props.url, { method: "GET" });
+  const [data, loading, error] = useJsonFetch(BASE_URL + props.url, { method: "GET" });
 
   return (
     <div className="json-fetch-hook">
